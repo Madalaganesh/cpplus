@@ -1,0 +1,34 @@
+#include <iostream>
+
+class Vehicle {
+public:
+    // Virtual member function to drive the vehicle
+    virtual void drive() const = 0;
+};
+
+class Car : public Vehicle {
+public:
+    // Override the virtual member function to drive the car
+    void drive() const override {
+        std::cout << "The car is being driven." << std::endl;
+    }
+};
+
+class Truck : public Vehicle {
+public:
+    // Override the virtual member function to drive the truck
+    void drive() const override {
+        std::cout << "The truck is being driven." << std::endl;
+    }
+};
+
+int main() {
+    // Create objects of Car and Truck and call their drive functions
+    Car car;
+    car.drive();
+
+    Truck truck;
+    truck.drive();
+
+    return 0;
+}
